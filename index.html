@@ -1,32 +1,76 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Pan Tadeusz</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-</head>
-<body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-	<div class="container-md">
-        <h2 class="my-5" >
-            Pan Tadeusz
-            <small class="text-muted"><br>czyli Ostatni zajazd na Litwie: historia szlachecka z roku 1811 i 1812 we dwunastu księgach wierszem</small>
-        </h2>
-        <p>Spis treści</p>
-        <ul>
-            <li><a href="./k1.html">Księga 1</a></li>
-            <li><a href="./k2.html">Księga 2</a></li>
-            <li><a href="./k3.html">Księga 3</a></li>
-            <li><a href="./k4.html">Księga 4</a></li>
-            <li><a href="./k5.html">Księga 5</a></li>
-            <li><a href="./k6.html">Księga 6</a></li>
-            <li><a href="./k7.html">Księga 7</a></li>
-            <li><a href="./k8.html">Księga 8</a></li>
-            <li><a href="./k9.html">Księga 9</a></li>
-            <li><a href="./k10.html">Księga 10</a></li>
-            <li><a href="./k11.html">Księga 11</a></li>
-            <li><a href="./k12.html">Księga 12</a></li>
-        </ul>
-    </div>
-</body>
+<html lang="PL">
+    <head>
+        <meta charset="utf-8">
+        <title>Pan Tadeusz</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+       <!--This part is the header-->
+        <div class="container-md">
+            <h2 class="my-5" >
+                Pan Tadeusz
+                <small class="text-muted"><br>czyli Ostatni zajazd na Litwie: historia szlachecka z roku 1811 i 1812 we dwunastu księgach wierszem</small>
+            </h2>
+        </div>
+        <!--NavBar-->
+
+        <!--MainContent-->
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <h3>Spis treści</h3><!--table of contents-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                   <!-- <ul>
+                        <li><a href="./k1.html">Księga 1</a></li>
+                        <li><a href="./k2.html">Księga 2</a></li>
+                        <li><a href="./k3.html">Księga 3</a></li>
+                        <li><a href="./k4.html">Księga 4</a></li>
+                        <li><a href="./k5.html">Księga 5</a></li>
+                        <li><a href="./k6.html">Księga 6</a></li>
+                        <li><a href="./k7.html">Księga 7</a></li>
+                        <li><a href="./k8.html">Księga 8</a></li>
+                        <li><a href="./k9.html">Księga 9</a></li>
+                        <li><a href="./k10.html">Księga 10</a></li>
+                        <li><a href="./k11.html">Księga 11</a></li>
+                        <li><a href="./k12.html">Księga 12</a></li>
+                    </ul>-->
+                    <ul>
+                        <li><p id="book1 ">Księga 1</p></li>
+                        <li><p id="book2">Księga 2</p></li>
+                        <li><p id="book3">Księga 3</p></li>
+                        <li><p id="book4">Księga 4</p></li>
+                        <li><p id="book5">Księga 5</p></li>
+                        <li><p id="book6">Księga 6</p></li>
+                        <li><p id="book7">Księga 7</p></li>
+                        <li><p id="book8">Księga 8</p></li>
+                        <li><p id="book9">Księga 9</p></li>
+                        <li><p id="book10">Księga 10</p></li>
+                        <li><p id="book11">Księga 11</p></li>
+                        <li><p id="book12">Księga 12</p></li>
+                    </ul>
+                </div>
+                <div class="col-10">
+                    <button onclick="fetchFile1()">show</button> <!--Here will be shown the content of every book chapter-->
+                    <div id="BookContent"></div>
+                </div>
+                <script>
+                    function fetchFile1(){
+                        const fileUrl = "./k12.html";
+                        fetch(fileUrl)
+                            .then(r => r.text())
+                            .then(t => {
+                                console.log(t)
+                                document.getElementById("BookContent").innerHTML = t
+                    })
+                    }
+                </script>
+            </div>
+        </div>
+    </body>
 </html>
