@@ -63,6 +63,9 @@
                         <li class="nav-item">
                             <button id="btn12" type="button" class="btn btn-light" onclick="fetchFile(12)">Księga 12</button>
                         </li>
+                        <li class="nav-item">
+                            <button id="btn13" type="button" class="btn btn-light" onclick="fetchFile(13)">Pobieranie</button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -106,12 +109,11 @@
             <p class="">Wykonana przez Kacpra Skrzyńskiego s218139<br>
             Strona utworzona na bazie projektu przygotowanego przez mgr. Katarzynę Wójcik </p>
         </div>
-
         <!-- Script part where all the magic happens-->
         <script>
             /* This script fetches the right html file and displays in the BookContent*/
             function fetchFile(index){
-                let urlList = ['./home.html', './k1.html', './k2.html', './k3.html', './k4.html', './k5.html', './k6.html', './k7.html', './k8.html', './k9.html', './k10.html', './k11.html', './k12.html'];
+                let urlList = ['./home.html', './k1.html', './k2.html', './k3.html', './k4.html', './k5.html', './k6.html', './k7.html', './k8.html', './k9.html', './k10.html', './k11.html', './k12.html','./downloadpg.html'];
                 const fileUrl = urlList[index];
                 fetch(fileUrl)
                     .then(r => r.text())
