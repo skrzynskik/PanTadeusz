@@ -25,43 +25,43 @@
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                         <li class="nav-item">
-                            <button type="button" class="btn btn-light fw-bold" onclick="fetchFile(0)">Strona Główna</button>
+                            <button id="btn0" type="button" class="btn btn-light" onclick="fetchFile(0)">Strona Główna</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-light" onclick="fetchFile(1)">Księga 1</button>
+                            <button id="btn1" type="button" class="btn btn-light"  onclick="fetchFile(1)">Księga 1</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-light" onclick="fetchFile(2)">Księga 2</button>
+                            <button id="btn2" type="button" class="btn btn-light" onclick="fetchFile(2)">Księga 2</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-light" onclick="fetchFile(3)">Księga 3</button>
+                            <button id="btn3" type="button" class="btn btn-light" onclick="fetchFile(3)">Księga 3</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-light" onclick="fetchFile(4)">Księga 4</button>
+                            <button id="btn4" type="button" class="btn btn-light" onclick="fetchFile(4)">Księga 4</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-light" onclick="fetchFile(5)">Księga 5</button>
+                            <button id="btn5" type="button" class="btn btn-light" onclick="fetchFile(5)">Księga 5</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-light" onclick="fetchFile(6)">Księga 6</button>
+                            <button id="btn6" type="button" class="btn btn-light" onclick="fetchFile(6)">Księga 6</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-light" onclick="fetchFile(7)">Księga 7</button>
+                            <button id="btn7" type="button" class="btn btn-light" onclick="fetchFile(7)">Księga 7</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-light" onclick="fetchFile(8)">Księga 8</button>
+                            <button id="btn8" type="button" class="btn btn-light" onclick="fetchFile(8)">Księga 8</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-light" onclick="fetchFile(9)">Księga 9</button>
+                            <button id="btn9" type="button" class="btn btn-light" onclick="fetchFile(9)">Księga 9</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-light" onclick="fetchFile(10)">Księga 10</button>
+                            <button id="btn10" type="button" class="btn btn-light" onclick="fetchFile(10)">Księga 10</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-light" onclick="fetchFile(11)">Księga 11</button>
+                            <button id="btn11" type="button" class="btn btn-light" onclick="fetchFile(11); fontWeight = 'bold';">Księga 11</button>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-light" onclick="fetchFile(12)">Księga 12</button>
+                            <button id="btn12" type="button" class="btn btn-light" onclick="fetchFile(12)">Księga 12</button>
                         </li>
                     </ul>
                 </div>
@@ -99,17 +99,100 @@
                 <script>
                     /* This script fetches the right html file and displays in the BookContent*/
                     function fetchFile(index){
-                        urlList = ['./home.html' ,'./k1.html','./k2.html','./k3.html','./k4.html','./k5.html','./k6.html','./k7.html','./k8.html','./k9.html','./k10.html','./k11.html','./k12.html'];
+                        let urlList = ['./home.html', './k1.html', './k2.html', './k3.html', './k4.html', './k5.html', './k6.html', './k7.html', './k8.html', './k9.html', './k10.html', './k11.html', './k12.html'];
                         const fileUrl = urlList[index];
                         fetch(fileUrl)
                             .then(r => r.text())
                             .then(t => {
-                                console.log(t)
                                 document.getElementById("BookContent").innerHTML = t
-
+                        console.log(index)
+                        bold(index);
                     })
                     }
+                    /* From my observation bootstrap causes Class conflict which results in inability to call elements by claas - you get an "undefined" when trying to do so*/
+                    /* this is the worst piece of code i've ever written and i am well aware of it*/
+                    function bold(i) {
 
+                        document.getElementById("btn0").style.fontWeight = 'normal';
+                        document.getElementById("btn1").style.fontWeight = 'normal';
+                        document.getElementById("btn2").style.fontWeight = 'normal';
+                        document.getElementById("btn3").style.fontWeight = 'normal';
+                        document.getElementById("btn4").style.fontWeight = 'normal';
+                        document.getElementById("btn5").style.fontWeight = 'normal';
+                        document.getElementById("btn6").style.fontWeight = 'normal';
+                        document.getElementById("btn7").style.fontWeight = 'normal';
+                        document.getElementById("btn8").style.fontWeight = 'normal';
+                        document.getElementById("btn9").style.fontWeight = 'normal';
+                        document.getElementById("btn10").style.fontWeight = 'normal';
+                        document.getElementById("btn11").style.fontWeight = 'normal';
+                        document.getElementById("btn12").style.fontWeight = 'normal';
+
+                        document.getElementById("book1").style.fontWeight = 'normal';
+                        document.getElementById("book2").style.fontWeight = 'normal';
+                        document.getElementById("book3").style.fontWeight = 'normal';
+                        document.getElementById("book4").style.fontWeight = 'normal';
+                        document.getElementById("book5").style.fontWeight = 'normal';
+                        document.getElementById("book6").style.fontWeight = 'normal';
+                        document.getElementById("book7").style.fontWeight = 'normal';
+                        document.getElementById("book8").style.fontWeight = 'normal';
+                        document.getElementById("book9").style.fontWeight = 'normal';
+                        document.getElementById("book10").style.fontWeight = 'normal';
+                        document.getElementById("book11").style.fontWeight = 'normal';
+                        document.getElementById("book12").style.fontWeight = 'normal';
+
+                        if (i===0){
+                            document.getElementById("btn0").style.fontWeight = 'bold';
+                        }
+                        else if (i===1) {
+                            document.getElementById("btn1").style.fontWeight = "bold";
+                            document.getElementById("book1").style.fontWeight = "bold";
+                        }
+                        else if (i===2) {
+                            document.getElementById("btn2").style.fontWeight = "bold";
+                            document.getElementById("book2").style.fontWeight = "bold";
+                        }
+                        else if (i===3) {
+                            document.getElementById("btn3").style.fontWeight = "bold";
+                            document.getElementById("book3").style.fontWeight = "bold";
+                        }
+                        else if (i===4) {
+                            document.getElementById("btn4").style.fontWeight = "bold";
+                            document.getElementById("book4").style.fontWeight = "bold";
+                        }
+                        else if (i===5) {
+                            document.getElementById("btn5").style.fontWeight = "bold";
+                            document.getElementById("book5").style.fontWeight = "bold";
+                        }
+                        else if (i===6) {
+                            document.getElementById("btn6").style.fontWeight = "bold";
+                            document.getElementById("book6").style.fontWeight = "bold";
+                        }
+                        else if (i===7) {
+                            document.getElementById("btn7").style.fontWeight = "bold";
+                            document.getElementById("book7").style.fontWeight = "bold";
+                        }
+                        else if (i===8) {
+                            document.getElementById("btn8").style.fontWeight = "bold";
+                            document.getElementById("book8").style.fontWeight = "bold";
+                        }
+                        else if (i===9) {
+                            document.getElementById("btn9").style.fontWeight = "bold";
+                            document.getElementById("book9").style.fontWeight = "bold";
+                        }
+                        else if (i===10) {
+                            document.getElementById("btn10").style.fontWeight = "bold";
+                            document.getElementById("book1").style.fontWeight = "bold";
+                        }
+                        else if (i===11) {
+                            document.getElementById("btn11").style.fontWeight = "bold";
+                            document.getElementById("book11").style.fontWeight = "bold";
+                        }
+                        else if (i===12) {
+                            document.getElementById("btn12").style.fontWeight = "bold";
+                            document.getElementById("book12").style.fontWeight = "bold";
+                        }
+
+                    }
                 </script>
             </div>
     </body>
