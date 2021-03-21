@@ -95,105 +95,117 @@
                     <div id="BookContent"></div>
                 </div>
             </div>
-
-                <script>
-                    /* This script fetches the right html file and displays in the BookContent*/
-                    function fetchFile(index){
-                        let urlList = ['./home.html', './k1.html', './k2.html', './k3.html', './k4.html', './k5.html', './k6.html', './k7.html', './k8.html', './k9.html', './k10.html', './k11.html', './k12.html'];
-                        const fileUrl = urlList[index];
-                        fetch(fileUrl)
-                            .then(r => r.text())
-                            .then(t => {
-                                document.getElementById("BookContent").innerHTML = t
-                        console.log(index)
-                        bold(index);
-                    })
-                    }
-                    /* From my observation bootstrap causes Class conflict which results in inability to call elements by claas - you get an "undefined" when trying to do so*/
-                    /* this is the worst piece of code i've ever written and i am well aware of it*/
-                    function bold(i) {
-
-                        document.getElementById("btn0").style.fontWeight = 'normal';
-                        document.getElementById("btn1").style.fontWeight = 'normal';
-                        document.getElementById("btn2").style.fontWeight = 'normal';
-                        document.getElementById("btn3").style.fontWeight = 'normal';
-                        document.getElementById("btn4").style.fontWeight = 'normal';
-                        document.getElementById("btn5").style.fontWeight = 'normal';
-                        document.getElementById("btn6").style.fontWeight = 'normal';
-                        document.getElementById("btn7").style.fontWeight = 'normal';
-                        document.getElementById("btn8").style.fontWeight = 'normal';
-                        document.getElementById("btn9").style.fontWeight = 'normal';
-                        document.getElementById("btn10").style.fontWeight = 'normal';
-                        document.getElementById("btn11").style.fontWeight = 'normal';
-                        document.getElementById("btn12").style.fontWeight = 'normal';
-
-                        document.getElementById("book1").style.fontWeight = 'normal';
-                        document.getElementById("book2").style.fontWeight = 'normal';
-                        document.getElementById("book3").style.fontWeight = 'normal';
-                        document.getElementById("book4").style.fontWeight = 'normal';
-                        document.getElementById("book5").style.fontWeight = 'normal';
-                        document.getElementById("book6").style.fontWeight = 'normal';
-                        document.getElementById("book7").style.fontWeight = 'normal';
-                        document.getElementById("book8").style.fontWeight = 'normal';
-                        document.getElementById("book9").style.fontWeight = 'normal';
-                        document.getElementById("book10").style.fontWeight = 'normal';
-                        document.getElementById("book11").style.fontWeight = 'normal';
-                        document.getElementById("book12").style.fontWeight = 'normal';
-
-                        if (i===0){
-                            document.getElementById("btn0").style.fontWeight = 'bold';
-                        }
-                        else if (i===1) {
-                            document.getElementById("btn1").style.fontWeight = "bold";
-                            document.getElementById("book1").style.fontWeight = "bold";
-                        }
-                        else if (i===2) {
-                            document.getElementById("btn2").style.fontWeight = "bold";
-                            document.getElementById("book2").style.fontWeight = "bold";
-                        }
-                        else if (i===3) {
-                            document.getElementById("btn3").style.fontWeight = "bold";
-                            document.getElementById("book3").style.fontWeight = "bold";
-                        }
-                        else if (i===4) {
-                            document.getElementById("btn4").style.fontWeight = "bold";
-                            document.getElementById("book4").style.fontWeight = "bold";
-                        }
-                        else if (i===5) {
-                            document.getElementById("btn5").style.fontWeight = "bold";
-                            document.getElementById("book5").style.fontWeight = "bold";
-                        }
-                        else if (i===6) {
-                            document.getElementById("btn6").style.fontWeight = "bold";
-                            document.getElementById("book6").style.fontWeight = "bold";
-                        }
-                        else if (i===7) {
-                            document.getElementById("btn7").style.fontWeight = "bold";
-                            document.getElementById("book7").style.fontWeight = "bold";
-                        }
-                        else if (i===8) {
-                            document.getElementById("btn8").style.fontWeight = "bold";
-                            document.getElementById("book8").style.fontWeight = "bold";
-                        }
-                        else if (i===9) {
-                            document.getElementById("btn9").style.fontWeight = "bold";
-                            document.getElementById("book9").style.fontWeight = "bold";
-                        }
-                        else if (i===10) {
-                            document.getElementById("btn10").style.fontWeight = "bold";
-                            document.getElementById("book1").style.fontWeight = "bold";
-                        }
-                        else if (i===11) {
-                            document.getElementById("btn11").style.fontWeight = "bold";
-                            document.getElementById("book11").style.fontWeight = "bold";
-                        }
-                        else if (i===12) {
-                            document.getElementById("btn12").style.fontWeight = "bold";
-                            document.getElementById("book12").style.fontWeight = "bold";
-                        }
-
-                    }
-                </script>
+        </div>
+        <!-- Footer-->
+        <div class="container bg-light rounded-pill text-center px-3 py-1">
+            <div class="d-flex justify-content-center px-2 " >
+                <a class="px-2 text-dark" href="https://github.com/skrzynskik/PanTadeusz">Repozytorium GitHub strony</a>
+                <a class="px-2 text-dark" href="https://e-uczelnia.uek.krakow.pl/course/view.php?id=10684">E-Uczelnia Moodle UEK</a>
+                <a class="px-2 text-dark" href="https://github.com/skrzynskik/PanTadeusz">GitHub</a>
             </div>
+            <p class="">Wykonana przez Kacpra Skrzyńskiego s218139<br>
+            Strona utworzona na bazie projektu przygotowanego przez mgr. Katarzynę Wójcik </p>
+        </div>
+
+        <!-- Script part where all the magic happens-->
+        <script>
+            /* This script fetches the right html file and displays in the BookContent*/
+            function fetchFile(index){
+                let urlList = ['./home.html', './k1.html', './k2.html', './k3.html', './k4.html', './k5.html', './k6.html', './k7.html', './k8.html', './k9.html', './k10.html', './k11.html', './k12.html'];
+                const fileUrl = urlList[index];
+                fetch(fileUrl)
+                    .then(r => r.text())
+                    .then(t => {
+                        document.getElementById("BookContent").innerHTML = t
+                console.log(index)
+                bold(index);
+            })
+            }
+            document.getElementById("btn0").click()
+            /* From my observation bootstrap causes Class conflict which results in inability to call elements by claas - you get an "undefined" when trying to do so*/
+            /* this is the worst piece of code i've ever written and i am well aware of it*/
+            function bold(i) {
+
+                document.getElementById("btn0").style.fontWeight = 'normal';
+                document.getElementById("btn1").style.fontWeight = 'normal';
+                document.getElementById("btn2").style.fontWeight = 'normal';
+                document.getElementById("btn3").style.fontWeight = 'normal';
+                document.getElementById("btn4").style.fontWeight = 'normal';
+                document.getElementById("btn5").style.fontWeight = 'normal';
+                document.getElementById("btn6").style.fontWeight = 'normal';
+                document.getElementById("btn7").style.fontWeight = 'normal';
+                document.getElementById("btn8").style.fontWeight = 'normal';
+                document.getElementById("btn9").style.fontWeight = 'normal';
+                document.getElementById("btn10").style.fontWeight = 'normal';
+                document.getElementById("btn11").style.fontWeight = 'normal';
+                document.getElementById("btn12").style.fontWeight = 'normal';
+
+                document.getElementById("book1").style.fontWeight = 'normal';
+                document.getElementById("book2").style.fontWeight = 'normal';
+                document.getElementById("book3").style.fontWeight = 'normal';
+                document.getElementById("book4").style.fontWeight = 'normal';
+                document.getElementById("book5").style.fontWeight = 'normal';
+                document.getElementById("book6").style.fontWeight = 'normal';
+                document.getElementById("book7").style.fontWeight = 'normal';
+                document.getElementById("book8").style.fontWeight = 'normal';
+                document.getElementById("book9").style.fontWeight = 'normal';
+                document.getElementById("book10").style.fontWeight = 'normal';
+                document.getElementById("book11").style.fontWeight = 'normal';
+                document.getElementById("book12").style.fontWeight = 'normal';
+
+                if (i===0){
+                    document.getElementById("btn0").style.fontWeight = 'bold';
+                }
+                else if (i===1) {
+                    document.getElementById("btn1").style.fontWeight = "bold";
+                    document.getElementById("book1").style.fontWeight = "bold";
+                }
+                else if (i===2) {
+                    document.getElementById("btn2").style.fontWeight = "bold";
+                    document.getElementById("book2").style.fontWeight = "bold";
+                }
+                else if (i===3) {
+                    document.getElementById("btn3").style.fontWeight = "bold";
+                    document.getElementById("book3").style.fontWeight = "bold";
+                }
+                else if (i===4) {
+                    document.getElementById("btn4").style.fontWeight = "bold";
+                    document.getElementById("book4").style.fontWeight = "bold";
+                }
+                else if (i===5) {
+                    document.getElementById("btn5").style.fontWeight = "bold";
+                    document.getElementById("book5").style.fontWeight = "bold";
+                }
+                else if (i===6) {
+                    document.getElementById("btn6").style.fontWeight = "bold";
+                    document.getElementById("book6").style.fontWeight = "bold";
+                }
+                else if (i===7) {
+                    document.getElementById("btn7").style.fontWeight = "bold";
+                    document.getElementById("book7").style.fontWeight = "bold";
+                }
+                else if (i===8) {
+                    document.getElementById("btn8").style.fontWeight = "bold";
+                    document.getElementById("book8").style.fontWeight = "bold";
+                }
+                else if (i===9) {
+                    document.getElementById("btn9").style.fontWeight = "bold";
+                    document.getElementById("book9").style.fontWeight = "bold";
+                }
+                else if (i===10) {
+                    document.getElementById("btn10").style.fontWeight = "bold";
+                    document.getElementById("book1").style.fontWeight = "bold";
+                }
+                else if (i===11) {
+                    document.getElementById("btn11").style.fontWeight = "bold";
+                    document.getElementById("book11").style.fontWeight = "bold";
+                }
+                else if (i===12) {
+                    document.getElementById("btn12").style.fontWeight = "bold";
+                    document.getElementById("book12").style.fontWeight = "bold";
+                }
+
+            }
+        </script>
     </body>
 </html>
