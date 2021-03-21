@@ -1,25 +1,116 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Pan Tadeusz</title>
-</head>
-<body>
-	<h1>Pan Tadeusz, czyli Ostatni zajazd na Litwie: historia szlachecka z roku 1811 i 1812 we dwunastu księgach wierszem</h1>
-	<p>Spis treści</p>
-	<ul>
-		<li><a href="./k1.html">Księga 1</a></li>
-		<li><a href="./k2.html">Księga 2</a></li>
-		<li><a href="./k3.html">Księga 3</a></li>
-		<li><a href="./k4.html">Księga 4</a></li>
-		<li><a href="./k5.html">Księga 5</a></li>
-		<li><a href="./k6.html">Księga 6</a></li>
-		<li><a href="./k7.html">Księga 7</a></li>
-		<li><a href="./k8.html">Księga 8</a></li>
-		<li><a href="./k9.html">Księga 9</a></li>
-		<li><a href="./k10.html">Księga 10</a></li>
-		<li><a href="./k11.html">Księga 11</a></li>
-		<li><a href="./k12.html">Księga 12</a></li>
-	</ul>
-</body>
+<html lang="PL">
+    <head>
+        <meta charset="utf-8">
+        <title>Pan Tadeusz</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+       <!--This part is the header-->
+        <p></p>
+        <div class="container-md bg-light rounded-pill">
+            <h2 class="my-3 p-3" >
+                Pan Tadeusz
+                <small class="text-muted"><br>czyli Ostatni zajazd na Litwie: historia szlachecka z roku 1811 i 1812 we dwunastu księgach wierszem</small>
+            </h2>
+        </div>
+        <!--NavBar-->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-md my-3 bg-light rounded-pill ">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light fw-bold" onclick="fetchFile(0)">Strona Główna</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light" onclick="fetchFile(1)">Księga 1</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light" onclick="fetchFile(2)">Księga 2</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light" onclick="fetchFile(3)">Księga 3</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light" onclick="fetchFile(4)">Księga 4</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light" onclick="fetchFile(5)">Księga 5</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light" onclick="fetchFile(6)">Księga 6</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light" onclick="fetchFile(7)">Księga 7</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light" onclick="fetchFile(8)">Księga 8</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light" onclick="fetchFile(9)">Księga 9</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light" onclick="fetchFile(10)">Księga 10</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light" onclick="fetchFile(11)">Księga 11</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light" onclick="fetchFile(12)">Księga 12</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <!--MainContent-->
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <h3 class="p-3 bg-light rounded-pill text-center"> Spis treści</h3><!--table of contents-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 text-center">
+                        <p id="book1">Księga 1</p>
+                        <p id="book2">Księga 2</p>
+                        <p id="book3">Księga 3</p>
+                        <p id="book4">Księga 4</p>
+                        <p id="book5">Księga 5</p>
+                        <p id="book6">Księga 6</p>
+                        <p id="book7">Księga 7</p>
+                        <p id="book8">Księga 8</p>
+                        <p id="book9">Księga 9</p>
+                        <p id="book10">Księga 10</p>
+                        <p id="book11">Księga 11</p>
+                        <p id="book12">Księga 12</p>
+                    </div>
+                <div class="col-10">
+                    <div id="BookContent"></div>
+                </div>
+            </div>
+
+                <script>
+                    /* This script fetches the right html file and displays in the BookContent*/
+                    function fetchFile(index){
+                        urlList = ['./home.html' ,'./k1.html','./k2.html','./k3.html','./k4.html','./k5.html','./k6.html','./k7.html','./k8.html','./k9.html','./k10.html','./k11.html','./k12.html'];
+                        const fileUrl = urlList[index];
+                        fetch(fileUrl)
+                            .then(r => r.text())
+                            .then(t => {
+                                console.log(t)
+                                document.getElementById("BookContent").innerHTML = t
+
+                    })
+                    }
+
+                </script>
+            </div>
+    </body>
 </html>
